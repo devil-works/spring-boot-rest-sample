@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User List</title>
+  </head>
+  <body>
+    <h1>User List</h1>
+    <table>
+      <tr id="th"></tr>
+      <tr id="td"></tr>
+    </table>
+    <script>
+      window.onload = (event) => {
+        fetch('http://localhost:8080/users/2')
+			.then(response => response.json())
+			.then(data => {
+			    const th = document.getElementById('th');
+			    const td = document.getElementById('td');
+
+			    for (var key in data) {
+			    	th.insertAdjacentHTML('beforeend', `<th>${key}</th>`);
+			    	td.insertAdjacentHTML('beforeend', `<th>${data[key]}</th>`);
+			    }
+			})
+			.catch(error => console.error('Error:', error));
+      };
+    </script>
+  </body>
+</html>
