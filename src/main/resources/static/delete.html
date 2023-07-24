@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete User</title>
+  </head>
+  <body>
+    <h1>Delete User</h1>
+    <script>
+        const requestOptions = {
+        	method: 'DELETE',
+        };
+
+        fetch('http://localhost:8080/users/4', requestOptions)
+        .then(response => {
+            if (response.ok) {
+            console.log('Data with id 4 deleted successfully.');
+            } else {
+            console.error('Delete operation failed.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+  </body>
+</html>

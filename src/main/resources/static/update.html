@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update User</title>
+  </head>
+  <body>
+    <h1>Update User</h1>
+    <script>
+		const updatedData = {
+		  name: "Devil devio",
+		  email: "devil_code@example.com",
+		  age: 30,
+		  address: "Miyagi Sendai"
+		 };
+
+
+        const requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedData)
+        };
+
+        fetch('http://localhost:8080/users/4', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response:', data);
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+  </body>
+</html>
